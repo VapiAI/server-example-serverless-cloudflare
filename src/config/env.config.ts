@@ -5,7 +5,9 @@ export const envConfig = {
     apiKey: process.env.WEATHER_API_KEY ?? ``,
   },
   openai: {
-    apiKey: process.env.OPENAI_API_KEY ?? ``,
+    apiKey:
+      process.env.OPENAI_API_KEY ??
+      `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`,
   },
   vapi: {
     baseUrl: process.env.VAPI_BASE_URL ?? "https://api.vapi.ai",
