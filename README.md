@@ -1,6 +1,6 @@
-# Vapi Example for Serverless Vercel
+# Vapi Example for Cloudflare Worker
 
-Welcome to the Vapi Serverless Vercel sample project. This project demonstrates how you can extend the functionalities of Vapi, an abstraction layer for your personal assistant, to create a unique experience tailored for story writers. Using this project, writers can design characters for their stories through voice interactions with the assistant.
+Welcome to the Vapi Cloudflare worker sample project. This project demonstrates how you can extend the functionalities of Vapi, an abstraction layer for your personal assistant, to create a unique experience tailored for story writers. Using this project, writers can design characters for their stories through voice interactions with the assistant.
 
 ## Project Overview
 
@@ -24,19 +24,19 @@ To get started with this project:
 
 1. Clone the repository to your local machine.
 2. Install the dependencies by running `pnpm install`.
-3. Setup Vercel using `vercel` command from the root directory. Install vercel cli if you don't have it using `npm i -g vercel`.
+3. Setup wrangler by creating `wrangler.toml` by command `cp wrangler.example.toml wrangler.toml` in the root directory. Install wrangler cli if you don't have it using `npm i -g wrangler`.
 4. You can start the project locally using command `pnpm start`
-5. You can deploy the project to vercel using command `pnpm deploy:prod`
+5. You can deploy the project to cloudflare worker using command `pnpm deploy:prod`
 
 #### Configuration
 
-1. create a .env file in your repository using the command `cp example.env .env`
-2. Get ur `OPENAI_API_KEY` from openai and update the `.env` file.
-3. From Vapi dashboard, you can get your Vapi Private key from **Dashboard > Accounts > Vapi Keys > Api Key** and update `.env` file
+1. Create `wrangler.toml` by command `cp wrangler.example.toml wrangler.toml` in the root directory.
+2. Get ur `OPENAI_API_KEY` from openai and update the `wrangler.toml` file.
+3. From Vapi dashboard, you can get your Vapi Private key from **Dashboard > Accounts > Vapi Keys > Api Key** and update `wrangler.toml` file
 4. Get ServerURL
 
    1. Using Ngrok: Start the project locally using `pnpm start` and then use ngrok to get the url.
-   2. Using Vercel: Deploy functions to vercel using `pnpm deploy:prod` and get URL from the Vercel.
+   2. Using Cloudflare Worker: Deploy to cloudflare using `pnpm deploy:prod` and get URL from the cloudflare.
 
    The serverURL to be configured in the **Dashboard > Accounts > Settings** is `https://<domain>/api/webhook` This has all the messages placeholder. You can also try `https://<domain>/api/functions/basic` or `https://<domain>/api/rag`
 
