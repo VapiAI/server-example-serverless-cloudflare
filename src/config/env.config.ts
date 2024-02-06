@@ -7,7 +7,7 @@ export const envConfig = {
   openai: {
     apiKey:
       process.env.OPENAI_API_KEY ??
-      `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`,
+      ``,
   },
   vapi: {
     baseUrl: process.env.VAPI_BASE_URL ?? "https://api.vapi.ai",

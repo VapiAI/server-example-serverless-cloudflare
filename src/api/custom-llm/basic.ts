@@ -35,4 +35,4 @@ app.post("chat/completions", async (c) => {
   }
 });
 
-export { app as customLLMBasicHandler };
+export { app as basicHandler };

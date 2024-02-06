@@ -76,4 +76,4 @@ app.post("chat/completions", async (c) => {
   }
 });
 
-export { app as customLLMOpenAIAdvancedRoute };
+export { app as openAIAdvancedRoute };

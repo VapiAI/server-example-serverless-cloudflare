@@ -5,9 +5,9 @@ import { envConfig } from "../../config/env.config";
 
 const openai = new OpenAI({ apiKey: envConfig.openai.apiKey });
 
-const customLLMOpenAISSEHandler = new Hono();
+const openAISSEHandler = new Hono();
 
-customLLMOpenAISSEHandler.post("chat/completions", async (c) => {
+openAISSEHandler.post("chat/completions", async (c) => {
   const { model, messages, max_tokens, temperature, stream, ...restParams } =
     await c.req.json();
 
@@ -46,4 +46,4 @@ customLLMOpenAISSEHandler.post("chat/completions", async (c) => {
   }
 });
 
-export { customLLMOpenAISSEHandler };
+export { openAISSEHandler };
