@@ -1,0 +1,24 @@
+name = "cloudflare-hono"
+compatibility_date = "2023-12-01"
+
+node_compat = true
+
+[vars]
+WEATHER_BASE_URL="https://api.openweathermap.org/data/2.5"
+WEATHER_API_KEY=""
+OPENAI_API_KEY = ""
+VAPI_BASE_URL="https://api.vapi.ai"
+VAPI_API_KEY=""
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""

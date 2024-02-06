@@ -1,7 +1,8 @@
 import { Hono } from "hono";
+import { Bindings } from "../types/hono.types";
 import { VapiPayload, VapiWebhookEnum } from "../types/vapi.types";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.post("/", async (c) => {
   try {

@@ -1,8 +1,9 @@
 import { Hono } from "hono";
 import { getRandomName } from "../../functions/getRandomName";
+import { Bindings } from "../../types/hono.types";
 import { VapiPayload, VapiWebhookEnum } from "../../types/vapi.types";
 
-const basicHandler = new Hono();
+const basicHandler = new Hono<{ Bindings: Bindings }>();
 
 basicHandler.post("/", async (c) => {
   try {

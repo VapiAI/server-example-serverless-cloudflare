@@ -1,14 +1,15 @@
 import { Hono } from "hono";
 import { VapiPayload, VapiWebhookEnum } from "../../types/vapi.types";
+import { Bindings } from "../../types/hono.types";
 import { assistantRequestHandler } from "./assistantRequest";
 import { endOfCallReportHandler } from "./endOfCallReport";
 import { functionCallHandler } from "./functionCall";
+import { HangEventHandler } from "./hang";
 import { speechUpdateHandler } from "./speechUpdateHandler";
 import { statusUpdateHandler } from "./statusUpdate";
 import { transcriptHandler } from "./transcript";
-import { HangEventHandler } from "./hang";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.post("/", async (c) => {
   const conversationUuid = c.req.query("conversation_uuid");

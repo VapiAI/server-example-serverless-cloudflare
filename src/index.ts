@@ -5,8 +5,9 @@ import { functionCallRoute } from "./api/functions";
 import { inboundRoute } from "./api/inbound";
 import { outboundRoute } from "./api/outbound";
 import { webhookRoute } from "./api/webhook";
+import { Bindings } from "./types/hono.types";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings}>();
 
 app.use("*", prettyJSON());
 app.notFound((c) => c.json({ message: "Not Found", ok: false }, 404));

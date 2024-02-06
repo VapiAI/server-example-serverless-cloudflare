@@ -1,8 +1,9 @@
 import { Hono } from "hono";
 import { getCharacterInspiration } from "../../functions/getCharacterInspiration";
+import { Bindings } from "../../types/hono.types";
 import { VapiPayload, VapiWebhookEnum } from "../../types/vapi.types";
 
-const ragHandler = new Hono();
+const ragHandler = new Hono<{ Bindings: Bindings }>();
 
 ragHandler.post("/", async (c) => {
   try {

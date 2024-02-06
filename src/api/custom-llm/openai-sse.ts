@@ -1,13 +1,12 @@
 import { Hono } from "hono";
 import { streamSSE } from "hono/streaming";
 import OpenAI from "openai";
-import { envConfig } from "../../config/env.config";
+import { Bindings } from "../../types/hono.types";
 
-const openai = new OpenAI({ apiKey: envConfig.openai.apiKey });
-
-const openAISSEHandler = new Hono();
+const openAISSEHandler = new Hono<{ Bindings: Bindings }>();
 
 openAISSEHandler.post("chat/completions", async (c) => {
+  const openai = new OpenAI({ apiKey: c.env.OPENAI_API_KEY });
   const { model, messages, max_tokens, temperature, stream, ...restParams } =
     await c.req.json();
 

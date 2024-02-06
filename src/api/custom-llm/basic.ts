@@ -1,6 +1,7 @@
 import { Hono } from "hono";
+import { Bindings } from "../../types/hono.types";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.post("chat/completions", async (c) => {
   try {
