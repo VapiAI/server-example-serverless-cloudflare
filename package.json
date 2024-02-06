@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "start": "wrangler dev src/index.ts",
+    "deploy:prod": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
     "hono": "^3.12.8",
